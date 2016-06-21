@@ -35,7 +35,7 @@ int main(int argc, char const *argv[]) {
 
   printf("---\n");
 
-  //fFourth complax way
+  //Fourth complex way
   for (cur_name = names, cur_age = ages; (cur_age - ages) < count; cur_name++,cur_age++){
     printf("%s lived %d years so far.\n",*cur_name,*cur_age );
   }

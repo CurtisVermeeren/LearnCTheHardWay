@@ -1,3 +1,4 @@
+//The Structures Of A C Program
 #include <stdio.h>
 
 /* This is a comment */
@@ -8,5 +9,5 @@ int main(int argc, char *argv[])
 	//This is also a comment
 	printf("You are %d miles away.\n", distance);
 
-	return 0; 
+	return 0;
 }

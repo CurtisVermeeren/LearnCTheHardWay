@@ -120,7 +120,7 @@ void Database_set(struct Connection *conn, int id, const char *name, const char 
 
 //Get a Database
 void Database_get(struct Connection *conn, int id){
-    struct Address *addr = &conn->db->rows[id]
+    struct Address *addr = &conn->db->rows[id];
 
     if (addr->set){
         Address_print(addr);
@@ -130,7 +130,7 @@ void Database_get(struct Connection *conn, int id){
 }
 
 //Delete a Database
-void Database_Delete(struct Connection *conn, int id){
+void Database_delete(struct Connection *conn, int id){
     struct Address addr = {.id=id,.set=0};
     conn->db->rows[id] = addr;
 }
@@ -143,14 +143,14 @@ void Database_list(struct Connection *conn){
     for(i=0; i< MAX_ROWS; i++){
         struct Address *current = &db->rows[i];
 
-        if(curr->set){
+        if(current->set){
             Address_print(current);
         }
     }
 }
 
 //Main
-int main(int argc, char const *argv[]) {
+int main(int argc, char *argv[]) {
     if (argc < 3)die("USAGE: ex17 <dbfile> <action> [action params]");
 
     char *filename = argv[1];
@@ -159,7 +159,7 @@ int main(int argc, char const *argv[]) {
     struct Connection *conn = Database_open(filename,action);
     int id = 0;
 
-    if(argc > 3)if = atoi(argv[3]);
+    if(argc > 3) id = atoi(argv[3]);
     if(id >= MAX_ROWS)die("There's not that many records");
 
     switch (action) {

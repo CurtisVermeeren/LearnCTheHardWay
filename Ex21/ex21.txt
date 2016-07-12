@@ -1,0 +1,280 @@
+Available Data Types:
+
+int
+	Stores a regular integer, default 32 bits in size.
+
+double
+	Holds a large floating point number
+
+float
+	Holds a smaller floating point number
+
+char 
+	Holds a single byte character
+
+void
+	Indicates "no type" used to say a funcion returns nothing or a pointer has no type.
+
+enum
+	Enumerated types. Work as and convert to integers but give symbolic names to sets. 
+
+////////////////////////////////////////////////////////////////////////////////
+
+Type Modifiers:
+
+unsigned
+	Changes the type so it doesn't have negative numbers. Large upper bounds but nothing less than 0.
+
+signed
+	Gives you negatice and positive but halves the upper bound.
+
+long
+	Uses a larger storage for the type so it can hold bigger numbers. Usually doubles current size.
+
+short
+	Uses smaller storage for the type so it stores less. Takes half the space. 
+
+////////////////////////////////////////////////////////////////////////////////
+
+Type Qualifiers:
+
+const
+	Indicates the variable won't change after being initialized.
+
+volatile
+	Indicates all bets are off and compiler should try not to do any fancy optimizations.
+
+register
+	Forces compiler to keep this variable in a register and the compiler can ignore you.
+
+//////////////////////////////////////////////////////////////////////////////// 
+
+Type Conversion:
+
+C looks at two operands on either side of an expression and promotes the smaller side to match the larger side before doing the operation.
+Order of types goes:
+	long double
+	double
+	float
+	int (but only char and short int)
+	long
+
+You can use casts to make them exactly as wanted. Always promote up and not down. Example:
+	(double)long - (double)char - double(int) * double 
+
+////////////////////////////////////////////////////////////////////////////////
+
+Type Sizes:
+
+stdint.h defines both a set of typdefs for exact sized integer types as well as a set of macros for the sizes of all the types. 
+The types are:
+
+int8_t 
+	8 bit signed integer.
+
+uint8_t
+	8 bit unsigned integer.
+
+int16_t
+	16 bit signed integer.
+
+uint16_t
+	16 bit unsigned integer.
+
+int32_t
+	32 bit signed integer.
+
+uint32_t
+	32 bit unsigned integer.
+
+int64_t
+	64 bit signed integer.
+
+uint64_t
+	64 bit unsigned integer.
+
+The Macros are:
+
+INT(N)_MAX
+	Maximum positive number of the signed integer of bits (N).
+
+INT(N)_MIN
+	Minimum negative number of the signed integer of bits (N).
+
+UINT(N)_MAX
+	Maximum positive number of unsigned integer of bits (N). Since it's unsigned the minumum is 0 and cannot be negative. 
+
+A full list of Macros is in stdint.h
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+Available Operators:
+
+binary
+	The operator has a left and right X + Y.
+
+unary
+	The operator is on its own -X
+
+prefix
+	The operator comes before the variable ++X
+
+postfix
+	Usually the same as the prefix but placing it after gives it different meaning
+
+ternary
+	Means three operands X ? Y : Z
+
+////////////////////////////////////////////////////////////////////////////////
+
+Math Operators:
+
+()
+	Function call
+
+*
+	Binary multiply
+
+/
+	Divide
+
++
+	Binary addition
+
++
+	Unary positive number
+
+++
+	Postfix read then increment
+
+++
+	Prefix increment then read
+
+--
+	Postfix read then decrement
+
+--
+	Prefic decrement then read
+
+-
+	Binary subtract
+
+-
+	Unary negative number
+
+////////////////////////////////////////////////////////////////////////////////
+
+Data Operators:
+
+->
+	Struct pointer access
+
+.
+	Struct value access
+
+[]
+	Array index
+
+sizeof
+	Size of a type or variable
+
+&
+	Unary address of 
+
+*
+	Unary value of
+
+////////////////////////////////////////////////////////////////////////////////
+
+Logic Operators:
+
+!= 
+	Does not equal
+
+<
+	Less than
+
+<= 
+	Less than or equal
+
+==
+	Equal (not assignment)
+
+>
+	Greater than
+
+>= 
+	Greater than or equal
+
+////////////////////////////////////////////////////////////////////////////////
+
+Bit Operators:
+
+!
+	not.
+
+&&
+	and.
+
+||
+	or.
+
+?:
+	Ternary truth test, read X ? Y : Z as "if X then Y else Z"
+
+///////////////////////////////////////////////////////////////////////////////
+
+Assignment Operators:
+
+=
+	assign.
+
+%=
+	modulus assign.
+
+&=
+	bitwise and assign.
+
+*=
+	multiply assign.
+
++=
+	plus assign.
+
+-=
+	minus assign.
+
+/=
+	divide assign.
+
+<<=
+	shift left, assign.
+
+>>=
+	shift right, assign.
+
+^=
+	bitwise xor, assign.
+
+|=
+	bitwise or, assign.
+
+///////////////////////////////////////////////////////////////////////////////
+
+Available Control Structures:
+
+do-while
+	do {...} while(X) First does the code in the block then tests the X expression before exiting.
+
+break
+	Put this in a loop and it breaks out ending it early.
+
+continue
+	Stops the body of the loop and jumps to the test so it can continue
+
+goto
+	Jumps to a spot in the code where you've places a label: 
+	
+
+
